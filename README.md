@@ -4,12 +4,12 @@ This project develops a machine learning pipeline to predict the likelihood of a
 The dataset contains **20,000 patients**, generated to mimic realistic medical risk patterns.
 
 The project demonstrates:
-- End-to-end ML workflow
-- Data preprocessing and scaling
-- Model training (Logistic Regression & Random Forest)
-- Model comparison using accuracy and ROC-AUC
-- Confusion matrix + ROC curve visualization
-- Feature importance analysis for model interpretability
+- End-to-end ML workflow  
+- Data preprocessing and scaling  
+- Model training (Logistic Regression & Random Forest)  
+- Model comparison using accuracy and ROC-AUC  
+- Confusion matrix + ROC curve visualization  
+- Feature importance analysis for model interpretability  
 
 ---
 
@@ -22,7 +22,7 @@ The project demonstrates:
 `Disease` → **1 = disease present**, **0 = healthy**
 
 ### ✔ ML Models Used
-- Logistic Regression (baseline)
+- Logistic Regression (baseline)  
 - Random Forest Classifier (main model)
 
 ### ✔ Evaluation Metrics
@@ -31,7 +31,7 @@ The project demonstrates:
 - ROC-AUC  
 - Confusion Matrix  
 - ROC Curve  
-- Feature Importance
+- Feature Importance  
 
 ---
 
@@ -78,32 +78,33 @@ medical-diagnosis-ml/
 
 ## 🧪 Key Findings
 
-- **Random Forest** achieved higher accuracy and ROC-AUC than Logistic Regression.
-- Glucose, Cholesterol, Blood Pressure, BMI, and Family History were the top predictors.  
-- Physical Activity had a negative correlation with disease risk.
-- The model shows strong potential for classification tasks in healthcare analytics.
+- **Random Forest** achieved higher accuracy and ROC-AUC than Logistic Regression.  
+- Glucose, Cholesterol, Blood Pressure, BMI, and Family History were the strongest predictors.  
+- Physical Activity showed a negative correlation with disease risk.  
+- The model demonstrates strong performance for healthcare classification tasks.
 
 ---
 
 ## 📌 Future Improvements
-- Add SHAP values for better medical interpretability  
+
+- Add SHAP values for improved interpretability  
 - Hyperparameter tuning (GridSearchCV)  
-- Add XGBoost for model comparison  
-- Deployment using FastAPI or Streamlit  
-- Publish dataset on Kaggle  
+- Add XGBoost model  
+- Deploy the model using FastAPI or Streamlit  
+- Publish the dataset on Kaggle  
 
 ---
 
-## 👨‍💻 Author
+## 👩‍💻 Author
 
-**Hamid Shiri**  
+**Forough Moosavi**  
 Data Analyst & Machine Learning Researcher  
 Southampton, United Kingdom  
 
-📧 Email: **hamidshiri.ai@gmail.com**  
-🌐 GitHub: *your GitHub link here*  
-🔗 LinkedIn: *your LinkedIn link here*  
+📧 Email: **foroughmousavi1371@gmail.com**  
+🌐 GitHub: *https://github.com/Forough-Moosavi*  
+🔗 LinkedIn: *https://www.linkedin.com/in/foroogh-mousavi-401383220/*  
 
 ---
 
-## ⭐ Feel free to star the repo if you find it useful!
+## ⭐ If you found this project useful, feel free to give it a star!
