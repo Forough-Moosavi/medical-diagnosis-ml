@@ -1,0 +1,68 @@
+import pandas as pd
+import numpy as np
+
+# -------------------------------
+# Generate a large synthetic dataset
+# -------------------------------
+
+N = 20000   # تعداد رکوردها (می‌تونی بزاری 50,000 هم)
+
+np.random.seed(42)
+
+data = pd.DataFrame({
+    "PatientID": np.arange(1, N+1),
+    "Age": np.random.randint(18, 90, N),
+    
+    # 0 = female, 1 = male
+    "Sex": np.random.randint(0, 2, N),
+    
+    # BMI: normal distribution with some noise
+    "BMI": np.random.normal(27, 5, N).clip(15, 50),
+    
+    # Blood Pressure (systolic)
+    "BloodPressure": np.random.normal(125, 15, N).clip(80, 200),
+    
+    # Cholesterol level 
+    "Cholesterol": np.random.normal(190, 40, N).clip(100, 350),
+    
+    # Glucose fasting level
+    "Glucose": np.random.normal(100, 25, N).clip(60, 250),
+    
+    # Smoking status
+    "Smoking": np.random.binomial(1, 0.25, N),
+    
+    # Family history of disease
+    "FamilyHistory": np.random.binomial(1, 0.35, N),
+    
+    # Activity level (1–5)
+    "PhysicalActivity": np.random.randint(1, 6, N),
+})
+
+# -------------------------------
+# Create realistic disease probability
+# -------------------------------
+
+# مدل احتمال بیماری (ترکیبی از عوامل خطر)
+risk_score = (
+    0.03 * data["Age"] +
+    0.05 * data["BMI"] +
+    0.07 * data["BloodPressure"] +
+    0.06 * data["Cholesterol"] +
+    0.08 * data["Glucose"] +
+    0.25 * data["Smoking"] +
+    0.30 * data["FamilyHistory"] -
+    0.10 * data["PhysicalActivity"]
+)
+
+# نرمال‌سازی
+risk_prob = (risk_score - risk_score.min()) / (risk_score.max() - risk_score.min())
+
+# تبدیل probability به 0/1 (disease)
+data["Disease"] = np.random.binomial(1, risk_prob)
+
+# -------------------------------
+# ذخیره
+# -------------------------------
+data.to_csv("medical_data.csv", index=False)
+
+data.head(), data.shape
